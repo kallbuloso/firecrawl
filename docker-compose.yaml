@@ -8,7 +8,7 @@ x-common-service: &common-service
   environment:
     - REDIS_URL=${REDIS_URL:-redis://redis:6379}
     - REDIS_RATE_LIMIT_URL=${REDIS_URL:-redis://redis:6379}
-    - PLAYWRIGHT_MICROSERVICE_URL=${PLAYWRIGHT_MICROSERVICE_URL:-http://playwright-service:3000}
+    - PLAYWRIGHT_MICROSERVICE_URL=${PLAYWRIGHT_MICROSERVICE_URL:-http://playwright-service:3101}
     - USE_DB_AUTHENTICATION=${USE_DB_AUTHENTICATION}
     - PORT=${PORT:-3002}
     - NUM_WORKERS_PER_QUEUE=${NUM_WORKERS_PER_QUEUE}
@@ -36,7 +36,7 @@ services:
   playwright-service:
     build: apps/playwright-service
     environment:
-      - PORT=3000
+      - PORT=3101
       - PROXY_SERVER=${PROXY_SERVER}
       - PROXY_USERNAME=${PROXY_USERNAME}
       - PROXY_PASSWORD=${PROXY_PASSWORD}

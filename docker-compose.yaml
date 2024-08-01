@@ -36,7 +36,7 @@ services:
   playwright-service:
     build: apps/playwright-service
     environment:
-      - PORT=3101
+      - PORT=3110
       - PROXY_SERVER=${PROXY_SERVER}
       - PROXY_USERNAME=${PROXY_USERNAME}
       - PROXY_PASSWORD=${PROXY_PASSWORD}
@@ -50,7 +50,7 @@ services:
       - redis
       - playwright-service
     ports:
-      - "3110:3110"
+      - "3102:3102"
     command: [ "pnpm", "run", "start:production" ]
 
   worker:

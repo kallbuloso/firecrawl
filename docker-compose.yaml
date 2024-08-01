@@ -8,7 +8,7 @@ x-common-service: &common-service
   environment:
     - REDIS_URL=${REDIS_URL:-redis://redis:6379}
     - REDIS_RATE_LIMIT_URL=${REDIS_URL:-redis://redis:6379}
-    - PLAYWRIGHT_MICROSERVICE_URL=${PLAYWRIGHT_MICROSERVICE_URL:-http://playwright-service:3101}
+    - PLAYWRIGHT_MICROSERVICE_URL=${PLAYWRIGHT_MICROSERVICE_URL:-http://playwright-service:3110}
     - USE_DB_AUTHENTICATION=${USE_DB_AUTHENTICATION}
     - PORT=${PORT:-3102}
     - NUM_WORKERS_PER_QUEUE=${NUM_WORKERS_PER_QUEUE}
@@ -50,7 +50,7 @@ services:
       - redis
       - playwright-service
     ports:
-      - "3102:3102"
+      - "3110:3110"
     command: [ "pnpm", "run", "start:production" ]
 
   worker:

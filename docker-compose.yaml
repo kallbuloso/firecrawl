@@ -10,7 +10,7 @@ x-common-service: &common-service
     - REDIS_RATE_LIMIT_URL=${REDIS_URL:-redis://redis:6379}
     - PLAYWRIGHT_MICROSERVICE_URL=${PLAYWRIGHT_MICROSERVICE_URL:-http://playwright-service:3101}
     - USE_DB_AUTHENTICATION=${USE_DB_AUTHENTICATION}
-    - PORT=${PORT:-3002}
+    - PORT=${PORT:-3102}
     - NUM_WORKERS_PER_QUEUE=${NUM_WORKERS_PER_QUEUE}
     - OPENAI_API_KEY=${OPENAI_API_KEY}
     - OPENAI_BASE_URL=${OPENAI_BASE_URL}
@@ -50,7 +50,7 @@ services:
       - redis
       - playwright-service
     ports:
-      - "3002:3002"
+      - "3102:3102"
     command: [ "pnpm", "run", "start:production" ]
 
   worker:

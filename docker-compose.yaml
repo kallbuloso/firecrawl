@@ -146,7 +146,7 @@ services:
         compress: "true"
   
   nuq-postgres:
-    build: apps/nuq-postgres/Dockerfile
+    build: apps/nuq-postgres
     environment:
       POSTGRES_USER: ${POSTGRES_USER:-postgres}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
